@@ -1,9 +1,9 @@
 module.exports = {
-  apiKey: 'AIzaSyANS3pG25pmoQ25CQk0P5cjNFQAlXyC9KI',
-  authDomain: 'u4-da-76.firebaseapp.com',
-  projectId: 'u4-da-76',
-  storageBucket: 'u4-da-76.appspot.com',
-  messagingSenderId: '22104874590',
-  appId: '1:22104874590:web:d35b2690dc7cf3222a5ecf',
-  measurementId: 'G-449Z4L8WNS'
+apiKey: "AIzaSyDQWiU1cZlf2B27UwpQjTTThPyjGich3tw",
+authDomain: "u4-database.firebaseapp.com",
+projectId: "u4-database",
+storageBucket: "u4-database.appspot.com",
+messagingSenderId: "784535390679",
+appId: "1:784535390679:web:4cf6a819428fb9be8fa392",
+measurementId: "G-9D5B56VYWG"
 }
