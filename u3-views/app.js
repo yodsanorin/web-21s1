@@ -2,7 +2,7 @@ const express = require('express')
 const expHbs = require('express-handlebars')
 const { courseDetails, courseUnits, courseStudents } = require('./features/courseController')
 const { index } = require('./features/indexController')
-const { Video, Videohome } = require('./features/videoController').lowerCamelCase()
+const { Video, Videohome } = require('./features/videoController').lowerCamelcase()
 
 const app = express()
 
