@@ -16,7 +16,7 @@
   "eslint.format.enable": false, // Enabled via codeActionsOnSave (known order)
   "eslint.lintTask.enable": true,
   "eslint.workingDirectories": [{ "mode": "auto" }],
-  "files.autoSave": "off",
+  "files.autoSave": "onFocusChange",
   "prettier.semi": false,
   "prettier.trailingComma": "none",
   "prettier.singleQuote": true,
@@ -53,8 +53,5 @@
   "vetur.format.defaultFormatter.html": "none",
   "vetur.format.defaultFormatter.css": "none",
   "vetur.format.defaultFormatter.scss": "none",
-  "windicss.includeLanguages": {
-    "vue": "html"
-  },
-  "git.ignoreLimitWarning": true
+  "windicss.includeLanguages": { "vue": "html" }
 }
