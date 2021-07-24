@@ -81,7 +81,7 @@ const createCovidRecord = async (req, res) => {
     res.sendStatus(201)
   } catch (err) {
     console.error(err)
-    res.sendStatus(500).json({ result: 'error' })
+    res.sendStatus(500)
   }
 }
 
@@ -100,7 +100,7 @@ const updateCovidRecord = async (req, res) => {
     res.sendStatus(200)
   } catch (err) {
     console.error(err)
-    res.sendStatus(500).json({ result: 'error' })
+    res.sendStatus(500)
   }
 }
 
