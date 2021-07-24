@@ -44,19 +44,11 @@ const readCovidRecord = async (req, res) => {
     // 3. Response
     const snapshot = await query
     if (!snapshot.exists) return res.status(404).json({ result: 'not found' })
-    const { stateName, history } = snapshot.data()
+    const data = snapshot.data()
     const payload = {
       stateId,
-      stateName,
-      history: history.map(item => ({
-        date: item.date.toMillis(),
-        cases: item.cases,
-        casesNew: item.casesNew,
-        vaccineOne: item.vaccineOne,
-        vaccineOnePercent: item.vaccineOnePercent,
-        vaccineComplete: item.vaccineComplete,
-        vaccineCompletePercent: item.vaccineCompletePercent
-      }))
+      statename: data.stateName,
+      history: data.history.map(({ date, cases, casesNew, vaccineOne, vaccineOnePercent, vaccineComplete, vaccineCompletePercent }) => ({ date: date.toMillis(), cases, casesNew, vaccineOne, vaccineOnePercent, vaccineComplete, vaccineCompletePercent }))
     }
     res.json({ result: 'ok', payload })
   } catch (err) {
@@ -70,14 +62,27 @@ const createCovidRecord = async (req, res) => {
     // 1. Inputs
     const { stateId, date, cases, casesNew, vaccineOne, vaccineOnePercent, vaccineComplete, vaccineCompletePercent } = req.body
     const record = { stateId, date: firestore.Timestamp.fromMillis(date), cases, casesNew, vaccineOne, vaccineOnePercent, vaccineComplete, vaccineCompletePercent }
+    const historyRecord = {
+      history: firestore.FieldValue.arrayUnion({
+        date: firestore.Timestamp.fromMillis(date),
+        cases,
+        casesNew,
+        vaccineOne,
+        vaccineOnePercent,
+        vaccineComplete,
+        vaccineCompletePercent
+      })
+    }
 
     // 2. Query
     const query = db.collection('covid-latest')
       .doc(stateId)
       .set(record, { merge: true })
+    const historyCovidRecord = db.collection('covid-history').doc(stateId).set(historyRecord, { merge: true })
 
     // 3. Response
     await query
+    await historyCovidRecord
     res.sendStatus(201)
   } catch (err) {
     console.error(err)
