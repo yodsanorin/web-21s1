@@ -26,8 +26,9 @@ app.get('/books', bookSearch)
 app.post('/books', bookCreate)
 app.get('/books/new', bookCreateForm)
 app.get('/books/:isbn13', bookDetails)
+
 // lab
-app.get('/',index)
+app.get('/', index)
 app.get('/iterations', iterationList)
 app.get('/iterations/:code', iterationDetails)
 app.get('/students/:code', studentDetails)
