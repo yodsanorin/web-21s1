@@ -1,2 +1,5 @@
-node_modules
 service-account*.json
+
+node_modules
+
+.DS_Store
