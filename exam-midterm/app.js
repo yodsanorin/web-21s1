@@ -3,7 +3,7 @@ const expHbs = require('express-handlebars')
 const { json, urlencoded } = require('body-parser')
 
 const { index } = require('./features/index-controller')
-const { resultCreateForm } = require('./features/results-controller')
+const { resultCreateForm, resultCreate, resultLists, resultDetails } = require('./features/results-controller')
 
 const app = express()
 
@@ -25,7 +25,10 @@ app.use(urlencoded({ extended: false }))
 app.get('/', index)
 
 // TODO: เขียนเส้นทางของคุณที่นี่ // Write your routes here
+app.get('/results', resultLists)
+app.get('/results/:slug', resultDetails)
 app.get('/results/new', resultCreateForm)
+app.post('/results', resultCreate)
 
 // General
 app.get('/images/:catchall', (_req, res) => res.redirect('/images/404.jpg'))

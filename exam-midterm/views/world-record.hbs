@@ -1,0 +1,12 @@
+{{#>page}}
+
+<h1>World Record</h1>
+<ul>
+  {{#each worldRecord}}
+  <h2>[WR]{{wr}} - {{wrName}} ({{wrYear}}) </a></h2>
+  <h2>[OR]{{or}} - {{orName}} ({{orYear}}) </a></h2><br>
+  <img src="/images/sports/{{eventSlug}}.png" width="50%" />
+  {{/each}}
+</ul>
+
+{{/page}}
