@@ -15,9 +15,9 @@ const resultDetails = async (req, res) => {
     .collection('attempts')
     .orderBy('distance')
     .get()
-  const resultDetails = (await query).data()
+  const resultdetails = (await query).data()
 
-  res.render('results-details', { resultDetails })
+  res.render('results-details', { resultdetails })
 }
 const worldRecord = async (req, res) => {
   const slug = req.params.slug
