@@ -7,6 +7,23 @@
         <span class="output">{{ output.toFixed(2) }}</span>
       </td>
     </tr>
+    <tr>
+      <td>
+        <select v-model="input">
+          <option v-for="unit in units" :key="unit.id">
+            {{ unit.label }}
+          </option>
+        </select>
+      </td>
+      <td class="fake-link" @click="swap()">swap</td>
+      <td>
+        <select v-model="output">
+          <option v-for="unit in units" :key="unit.id">
+            {{ unit.label }}
+          </option>
+        </select>
+      </td>
+    </tr>
   </table>
 </template>
 
@@ -34,6 +51,19 @@ export default class Converter extends Vue {
     }
 
     return converters[`${this.inputUnit}-${this.outputUnit}`](this.input)
+  }
+
+  units = [
+    { id: 'f', label: 'Fahrenheit' },
+    { id: 'c', label: 'Celsius' },
+    { id: 'k', label: 'Kelvin' }
+  ]
+
+  swap (): void {
+    this.input = parseFloat(this.output.toFixed(2))
+    const temp = this.inputUnit
+    this.inputUnit = this.outputUnit
+    this.outputUnit = temp
   }
 }
 </script>
