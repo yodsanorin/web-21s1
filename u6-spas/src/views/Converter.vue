@@ -9,16 +9,16 @@
     </tr>
     <tr>
       <td>
-        <select v-model="input">
-          <option v-for="unit in units" :key="unit.id">
+        <select v-model="inputUnit">
+          <option v-for="unit in units" :key="unit.id" :value="unit.id">
             {{ unit.label }}
           </option>
         </select>
       </td>
       <td class="fake-link" @click="swap()">swap</td>
       <td>
-        <select v-model="output">
-          <option v-for="unit in units" :key="unit.id">
+        <select v-model="outputUnit">
+          <option v-for="unit in units" :key="unit.id" :value="unit.id">
             {{ unit.label }}
           </option>
         </select>
