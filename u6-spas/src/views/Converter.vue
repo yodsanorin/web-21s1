@@ -27,6 +27,63 @@
   </table>
 </template>
 
+<style scoped>
+table {
+  margin: 2rem;
+  border-collapse: collapse;
+}
+
+table,
+table * {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+tr:first-child,
+tr:first-child * {
+  font-size: 3rem;
+}
+
+tr:nth-child(2) * {
+  font-size: 1.25rem;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+td:first-child,
+td:last-child {
+  border: 1px solid #ccc;
+}
+
+td:nth-child(2) {
+  padding: 0 1.25rem;
+}
+
+input,
+.output,
+select,
+option {
+  display: block;
+  width: 14rem;
+  margin: 0;
+  padding: 0.5rem;
+  border: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+select {
+  background-color: #f5f5f5;
+}
+
+.fake-link {
+  color: #00f;
+  cursor: pointer;
+  user-select: none;
+}
+</style>
+
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
