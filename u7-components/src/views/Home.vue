@@ -3,8 +3,7 @@
     <VideoCard
       v-for="video in videos"
       :key="`home-card-${video.id}`"
-      :video="video"
-    />
+      :video="video"/>
   </div>
 </template>
 

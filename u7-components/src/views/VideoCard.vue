@@ -15,7 +15,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-
 @Component({ props: ['video'] })
 export default class VideoCard extends Vue { }
 </script>
@@ -29,16 +28,13 @@ export default class VideoCard extends Vue { }
   border: 1px solid #efefef;
   text-decoration: none;
 }
-
 .home-card > div {
   position: relative;
 }
-
 .home-card > div > img {
   display: block;
   width: 100%;
 }
-
 .home-card > div > p {
   position: absolute;
   bottom: 0;
@@ -50,7 +46,6 @@ export default class VideoCard extends Vue { }
   color: #ffffff;
   font-size: 0.75rem;
 }
-
 .home-card > p {
   width: 100%;
   margin: 8px;
