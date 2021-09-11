@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/BookDetails.vue'
+import BookDetails from '../views/BookDetails.vue'
 
 Vue.use(VueRouter)
 
@@ -8,7 +8,7 @@ const routes: Array<RouteConfig> = [
   {
     path: '/:isbn13',
     name: 'BookDetails',
-    component: Home
+    component: BookDetails
   },
   {
     path: '/about',

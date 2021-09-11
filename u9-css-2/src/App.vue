@@ -39,9 +39,7 @@
               </tr>
             </table>
           </b-navbar-item>
-          <b-button class="is-primary mr-3 mb-3" size="is-4" expanded>
-            Checkout
-          </b-button>
+          <b-button class="is-primary mr-3 md-3" expanded>Checkout</b-button>
         </b-navbar-dropdown>
       </template>
     </b-navbar>
