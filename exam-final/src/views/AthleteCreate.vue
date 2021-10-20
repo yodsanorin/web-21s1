@@ -52,6 +52,8 @@ export default class AthleteCreate extends Vue {
     const { slug, name, teamSlug, team, age, gender } = this
     const athlete: Athlete = { slug, name, teamSlug, team, age, gender }
     // TODO: Save & redirect
+    this.$store.dispatch('create-athlete', athlete)
+    this.$router.push({ name: 'AthleteDetails', params: { resultSlug: athlete.slug } })
   }
 }
 </script>

@@ -8,10 +8,9 @@
         </b-navbar-item>
       </template>
       <template #start>
-        <!-- ATHLETES -->
-        <!-- <b-navbar-item tag="router-link" :to="{ name: 'AthleteDetails', params: { athleteSlug: 'ahmed-hafnaoui' } }">Athlete: Ahmed</b-navbar-item>
+     <b-navbar-item tag="router-link" :to="{ name: 'AthleteDetails', params: { athleteSlug: 'ahmed-hafnaoui' } }">Athlete: Ahmed</b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ name: 'AthleteList' }">Athletes</b-navbar-item>
-        <b-navbar-item tag="router-link" :to="{ name: 'AthleteCreate' }">Create Athlete</b-navbar-item> -->
+        <b-navbar-item tag="router-link" :to="{ name: 'AthleteCreate' }">Create Athlete</b-navbar-item>
 
         <!-- ENTRIES -->
         <!-- <b-navbar-item tag="router-link" :to="{ name: 'EntryDetails', params: { entrySlug: 'elaine-thompson-herah' } }">Entry: Elaine</b-navbar-item>
