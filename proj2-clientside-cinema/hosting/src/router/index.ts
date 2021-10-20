@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
-
+import CinemaList from '../views/CinemaList.vue'
+import films from '../views/FilmsList.vue'
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
@@ -9,6 +10,16 @@ const routes: Array<RouteConfig> = [
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/films',
+    name: 'FilmList',
+    component: films
+  },
+  {
+    path: '/cinemas',
+    name: 'CinemaList',
+    component: CinemaList
   },
   {
     path: '/about',
