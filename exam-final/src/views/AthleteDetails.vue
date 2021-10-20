@@ -1,12 +1,12 @@
 <template>
   <div class="page-result-details">
-    <div class="section" v-if="result">
+    <div class="section" v-if="athlete">
       <p class="title is-2">{{ athlete.name }}</p>
       <p>Age: {{ athlete.age }}</p>
       <p>gender: {{ athlete.gender }}</p>
     <img
-          :src="`/images/athletes/${athleteSlug}.jpg`"
-          alt="athletes.slug"
+          :src="`/images/athletes/${athlete.slug}.jpg`"
+          alt="athleteSlug"
         />
     </div>
     <div class="section" v-else>
@@ -21,7 +21,7 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class AthleteDetails extends Vue {
-  get Athlete (): Athlete | undefined {
+  get athlete (): Athlete | undefined {
     return this.$store.getters.athletesBySlug[this.$route.params.athleteSlug]
   }
 }

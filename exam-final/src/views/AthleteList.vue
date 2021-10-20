@@ -20,7 +20,7 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class AthleteList extends Vue {
-  get Athlete (): Athlete [] {
+  get athletes (): Athlete [] {
     return this.$store.state.athletes.sort((a: Athlete, b: Athlete) => a.team.localeCompare(b.team))
   }
 }
