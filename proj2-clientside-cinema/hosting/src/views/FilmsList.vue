@@ -1,5 +1,39 @@
 <template>
-  <div class="Cinemas">
-    <h1>Films</h1>
+  <div class="page-film-list">
+    <div class="section">
+    <p class="title">Films</p>
+    <div class="film-grid">
+      <router-link
+        v-for="film in films"
+        :key="film.id"
+        :to="{
+          name: 'FilmDetails',
+          params: { slug: film.slug },
+        }"
+        ><img :src="`/images/films/${film.slug}.jpg`" alt="film.title" />
+        <p class="is-size-4 has-text-dark has-text-weight-bold">
+          {{ film.title }}
+        </p>
+      </router-link>
+      </div>
+    </div>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import { mapState } from 'vuex'
+@Component({
+  computed: mapState(['films'])
+})
+export default class FilmList extends Vue { }
+</script>
+
+<style scoped>
+.film-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-gap: 1rem;
+}
+</style>

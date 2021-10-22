@@ -3,6 +3,10 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import CinemaList from '../views/CinemaList.vue'
 import films from '../views/FilmsList.vue'
+import CinemaDetails from '../views/CinemaDetails.vue'
+import FilmDetails from '../views/FilmDetails.vue'
+import Book from '../views/Book.vue'
+import Tickets from '../views/Tickets.vue'
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
@@ -17,9 +21,29 @@ const routes: Array<RouteConfig> = [
     component: films
   },
   {
+    path: '/films/:slug',
+    name: 'FilmDetails',
+    component: FilmDetails
+  },
+  {
     path: '/cinemas',
     name: 'CinemaList',
     component: CinemaList
+  },
+  {
+    path: '/cinemas/:slug',
+    name: 'CinemaDetails',
+    component: CinemaDetails
+  },
+  {
+    path: '/book/:slug',
+    name: 'Book',
+    component: Book
+  },
+  {
+    path: '/tickets',
+    name: 'Tickets',
+    component: Tickets
   },
   {
     path: '/about',

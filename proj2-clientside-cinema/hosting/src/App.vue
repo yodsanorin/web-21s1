@@ -5,10 +5,10 @@
   >
     <!-- ADD NAVBAR HERE -->
     <div id="app">
-    <b-navbar type="is-dark ">
+    <b-navbar type="is-dark " wrapper-class="container">
       <template #brand>
-        <b-navbar-item tag="router-link" :to="{ path: '/' }" class="is-size-3">
-          <p>BECinema</p>
+        <b-navbar-item tag="router-link" :to="{ path: '/' }" class="is-5">
+          <p class="is-size-3 has-text-weight-bold">BECinema</p>
         </b-navbar-item>
         <b-navbar-item tag="router-link" :to="{ path: '/cinemas' }" class="is-size-8">
           <p>Cinemas</p>
@@ -21,7 +21,7 @@
       <template #end>
         <b-navbar-dropdown collapsible hoverable right>
           <template #label>
-            <b-icon icon="map-marker-radius"></b-icon>
+            <b-icon icon="map-marker-radius-outline mr-4 mdi-24px"></b-icon>
             <p>Phisanulok</p>
           </template>
           <b-navbar-item>
@@ -30,16 +30,17 @@
           <b-navbar-item>
             <p>Chiang Mai</p>
           </b-navbar-item>
+          <b-navbar-item>
+            <p>Phisanulok</p>
+          </b-navbar-item>
         </b-navbar-dropdown>
 
-        <b-navbar-dropdown Personal>
+        <b-navbar-dropdown>
           <template #label>
-            <img :src="`./images/account/chaz.jpg`" >
-            <p>Chaz</p>
+            <img src="/images/accounts/chaz.jpg" alt="Chaz" class="is rounded mr-4" />
+          <span class="is-size-6">Chaz</span>
           </template>
-          <b-navbar-item>
-          <p>My Tickets</p>
-          </b-navbar-item>
+          <b-navbar-item tag="router-link" :to="{ name: 'Tickets' }">My Tickets</b-navbar-item>
         </b-navbar-dropdown>
       </template>
     </b-navbar>
@@ -150,5 +151,8 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
+}
+img {
+    border-radius: 50%;
 }
 </style>
