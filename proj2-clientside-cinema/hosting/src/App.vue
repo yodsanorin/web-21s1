@@ -21,17 +21,17 @@
       <template #end>
         <b-navbar-dropdown collapsible hoverable right>
           <template #label>
-            <b-icon icon="map-marker-radius-outline mr-4 mdi-24px"></b-icon>
-            <p>Phisanulok</p>
+           <div style="user-select: none;">
+              <b-icon icon="map-marker-radius-outline" class="mr-2 mdi-24px"></b-icon>
+              {{ $store.state.activeLocation }}
+            </div>
           </template>
-          <b-navbar-item>
-            <p>Bankok</p>
-          </b-navbar-item>
-          <b-navbar-item>
-            <p>Chiang Mai</p>
-          </b-navbar-item>
-          <b-navbar-item>
-            <p>Phisanulok</p>
+          <b-navbar-item
+            v-for="location in $store.state.locations"
+            :key="location"
+            @click="$store.dispatch(`changeLocation`, location)"
+          >
+            {{ location }}
           </b-navbar-item>
         </b-navbar-dropdown>
 
