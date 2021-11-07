@@ -1,6 +1,7 @@
 # Secrets
 firebase-config.ts
 service-account*.json
+firebase-config*.ts
 
 
 # Deps
@@ -11,3 +12,6 @@ node_modules
 
 # OS
 .DS_Store
+
+#vscode
+.vscode
