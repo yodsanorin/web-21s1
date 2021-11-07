@@ -29,8 +29,25 @@
           :id="`label-seats-${seat}`"
           :for="`seats-${seat}`"
           :key="`label-seats-${seat}`"
-          >{{ seat }}</label
-        ></template>
+          >{{ seat }}
+          </label>
+          </template>
+
+           <template v-for="seat in screening.seatsUnavailable">
+        <input
+          :id="`seats-${seat}`"
+          :key="`seats-${seat}`"
+          v-model="seats"
+          type="checkbox"
+          :value="seat"
+          disabled=""/>
+          <label
+          :id="`label-seats-${seat}`"
+          :for="`seats-${seat}`"
+          :key="`label-seats-${seat}`">
+          {{ seat }}
+          </label>
+          </template>
        </div>
        <button
       type="button"
