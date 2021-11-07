@@ -1,6 +1,7 @@
 # Secrets
 service-account*.json
 firebase-config*.ts
+
 # Deps
 node_modules
 
